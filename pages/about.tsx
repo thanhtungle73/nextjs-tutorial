@@ -1,4 +1,5 @@
 import Header from '@/components/common/header';
+import { MainLayout } from '@/components/layout';
 // import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -50,6 +51,9 @@ export default function AboutPage (props: AboutPageProps) {
     </div>
   );
 }
+
+// Use main lauout for about page.
+AboutPage.Layout = MainLayout;
 
 export async function getStaticProps() {
   console.log('Get Static Props');
