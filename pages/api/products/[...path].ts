@@ -9,5 +9,5 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'Learn NextJs' })
+  res.status(200).json({ name: 'Catch all paths of products' })
 }
