@@ -1,31 +1,43 @@
 import { LayoutProps } from '@/models/index';
+import { Box, Container, Stack } from '@mui/material';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
+import Header from '@/components/common/header';
+import Footer from '@/components/common/footer';
 
-export interface IMainLayoutProps {
-}
+export interface IMainLayoutProps {}
 
-export function MainLayout ({children}: LayoutProps) {
-    useEffect(() => {
-        console.log('Mainlayout mounting');
+export function MainLayout({ children }: LayoutProps) {
+  useEffect(() => {
+    console.log('Mainlayout mounting');
 
-        return () => console.log('Mainlayout unmounting');
-    }, []);
+    return () => console.log('Mainlayout unmounting');
+  }, []);
   return (
-    <div>
-      <h1>Main Layout</h1>
+    <Stack minHeight="100vh">
+      <Header />
 
-      <Link href="/">
-      <a>Home</a>
-      </Link>
+      <Box component="main" flexGrow={1}>
+        <Container maxWidth="sm" sx={{ bgcolor: 'primary.main' }}>
+          SM CONTAINER
+        </Container>
+        <Container sx={{ bgcolor: 'primary.main' }}>SM CONTAINER</Container>
 
-      <Link href="/about">
-      <a>About</a>
-      </Link>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
 
-      <div>
-          {children}
-      </div>
-    </div>
+        <Link href="/blog">
+          <a>Blog</a>
+        </Link>
+
+        <Link href="/work">
+          <a>Work</a>
+        </Link>
+        {children}
+      </Box>
+
+      <Footer />
+    </Stack>
   );
 }
