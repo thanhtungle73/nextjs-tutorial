@@ -3,6 +3,9 @@ import { red } from '@mui/material/colors';
 
 // Create a theme instance.
 export const theme = createTheme({
+  typography: {
+    fontFamily: 'Heebo, sans-serif',
+  },
   palette: {
     primary: {
       main: '#FF6464',
@@ -37,6 +40,7 @@ export const theme = createTheme({
         }
       }
     },
+    // Override style for Link component
     MuiLink: {
       defaultProps: {
         underline: 'none'
@@ -45,7 +49,7 @@ export const theme = createTheme({
         root: {
           color: 'black',
 
-          '&:hover': {
+          '&:hover, &.active': {
             color: '#FF6464'
           }
         }

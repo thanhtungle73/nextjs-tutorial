@@ -1,9 +1,8 @@
-import { LayoutProps } from '@/models/index';
-import { Box, Container, Stack } from '@mui/material';
-import Link from 'next/link';
-import React, { useEffect } from 'react';
-import Header from '@/components/common/header';
 import Footer from '@/components/common/footer';
+import Header from '@/components/common/header';
+import { LayoutProps } from '@/models/index';
+import { Box, Stack } from '@mui/material';
+import React, { useEffect } from 'react';
 
 export interface IMainLayoutProps {}
 
@@ -18,22 +17,6 @@ export function MainLayout({ children }: LayoutProps) {
       <Header />
 
       <Box component="main" flexGrow={1}>
-        <Container maxWidth="sm" sx={{ bgcolor: 'primary.main' }}>
-          SM CONTAINER
-        </Container>
-        <Container sx={{ bgcolor: 'primary.main' }}>SM CONTAINER</Container>
-
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-
-        <Link href="/blog">
-          <a>Blog</a>
-        </Link>
-
-        <Link href="/work">
-          <a>Work</a>
-        </Link>
         {children}
       </Box>
 
