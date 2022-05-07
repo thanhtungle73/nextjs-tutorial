@@ -3,11 +3,15 @@ import { red } from '@mui/material/colors';
 
 // Create a theme instance.
 export const theme = createTheme({
+  typography: {
+    fontFamily: 'Heebo, sans-serif',
+  },
   palette: {
     primary: {
       main: '#FF6464',
     },
     secondary: {
+      light: '#EDF7FA',
       main: '#00A8CC',
     },
     error: {
@@ -45,12 +49,22 @@ export const theme = createTheme({
         root: {
           color: 'black',
 
-          '&:hover': {
+          '&:hover, &.active': {
             color: '#FF6464'
           }
         }
       }
 
+    },
+    MuiButton: {
+      variants: [
+        {
+          props: {variant: 'contained', color: 'primary'},
+          style: {
+            color: 'white'
+          }
+        }
+      ]
     }
   }
 });

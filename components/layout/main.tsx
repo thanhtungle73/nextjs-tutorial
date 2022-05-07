@@ -18,22 +18,6 @@ export function MainLayout({ children }: LayoutProps) {
       <Header />
 
       <Box component="main" flexGrow={1}>
-        <Container maxWidth="sm" sx={{ bgcolor: 'primary.main' }}>
-          SM CONTAINER
-        </Container>
-        <Container sx={{ bgcolor: 'primary.main' }}>SM CONTAINER</Container>
-
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-
-        <Link href="/blog">
-          <a>Blog</a>
-        </Link>
-
-        <Link href="/work">
-          <a>Work</a>
-        </Link>
         {children}
       </Box>
 
