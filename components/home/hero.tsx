@@ -16,12 +16,12 @@ export function HeroSection(props: HeroSectionProps) {
           textAlign={{ xs: 'center', md: 'left' }}
         >
           <Box>
-            <Typography component="h1" variant="h3" fontWeight="bold" mb={5}>
+            <Typography component="h1" variant="h3" fontWeight="bold" mb={{ xs: 3.5, md: 5 }}>
               Hi, I am John, <br />
               Creative Technologist
             </Typography>
 
-            <Typography variant="body1" mb={5}>
+            <Typography variant="body1" mb={{ xs: 3.5, md: 5 }}>
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
               officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud
               amet.
