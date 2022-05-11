@@ -1,9 +1,8 @@
-import { LayoutProps } from '@/models/index';
-import { Box, Container, Stack } from '@mui/material';
-import Link from 'next/link';
-import React, { useEffect } from 'react';
-import Header from '@/components/common/header';
 import Footer from '@/components/common/footer';
+import Header from '@/components/common/header';
+import { LayoutProps } from '@/models/index';
+import { Box, Stack } from '@mui/material';
+import React, { useEffect } from 'react';
 
 export interface IMainLayoutProps {}
 
