@@ -1,4 +1,4 @@
-import { createTheme, responsiveFontSizes  } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
 // Create a theme instance.
@@ -18,14 +18,14 @@ export let theme = createTheme({
       main: red.A400,
     },
     text: {
-      primary: '#21243D'
-    }
+      primary: '#21243D',
+    },
   },
   components: {
     MuiContainer: {
       defaultProps: {
         fixed: true,
-        maxWidth: 'md'
+        maxWidth: 'md',
       },
       styleOverrides: {
         maxWidthSm: {
@@ -33,46 +33,63 @@ export let theme = createTheme({
 
           '@media (min-width: 600px)': {
             maxWidth: '680px',
-          }
+          },
         },
         maxWidthMd: {
           maxWidth: '860px',
 
           '@media (min-width: 900px)': {
             maxWidth: '860px',
-          }
-        }
-      }
+          },
+        },
+      },
     },
     MuiLink: {
       defaultProps: {
-        underline: 'none'
+        underline: 'none',
       },
       styleOverrides: {
         root: {
           color: 'black',
 
           '&:hover, &.active': {
-            color: '#FF6464'
-          }
-        }
-      }
-
+            color: '#FF6464',
+          },
+        },
+      },
     },
     MuiButton: {
       variants: [
         {
-          props: {variant: 'contained', color: 'primary'},
+          props: { variant: 'contained', color: 'primary' },
           style: {
-            color: 'white'
-          }
+            color: 'white',
+          },
+        },
+      ],
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          paddingInline: 2,
         }
-      ]
-    }
-  }
+      },
+      variants: [
+        {
+          props: { color: 'secondary' },
+          style: {
+            color: 'white',
+            fontSize: 16,
+            backgroundColor: '#142850',
+            fontWeight: 'bold',
+          },
+        },
+      ],
+    },
+  },
 });
 
-theme = responsiveFontSizes(theme)
+theme = responsiveFontSizes(theme);
 
 // Responsive fontSize h3 old technique
 // theme.typography.h3 = {

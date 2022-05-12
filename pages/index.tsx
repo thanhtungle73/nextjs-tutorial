@@ -1,4 +1,5 @@
 import { HeroSection } from '@/components/home';
+import FeatureWorks from '@/components/home/feature-work';
 import RecentPost from '@/components/home/recent-post';
 import { MainLayout } from '@/components/layout';
 import { Box } from '@mui/material';
@@ -10,6 +11,7 @@ const Home: NextPageWithLayout = () => {
     <Box>
       <HeroSection />
       <RecentPost />
+      <FeatureWorks />
     </Box>
   );
 };

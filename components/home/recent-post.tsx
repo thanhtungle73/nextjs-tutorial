@@ -1,4 +1,4 @@
-import { Post } from '@/models/index';
+import { Post } from '@/models';
 import { Box, Container, Stack, Typography, Link as MuiLink, Card } from '@mui/material';
 import Link from 'next/link';
 import * as React from 'react';

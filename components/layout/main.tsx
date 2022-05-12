@@ -1,6 +1,6 @@
 import Footer from '@/components/common/footer';
 import Header from '@/components/common/header';
-import { LayoutProps } from '@/models/index';
+import { LayoutProps } from '@/models';
 import { Box, Stack } from '@mui/material';
 import React, { useEffect } from 'react';
 
