@@ -5,9 +5,12 @@ import { useRouter } from 'next/router';
 import * as React from 'react';
 import { ROUTE_LIST } from './routes';
 
-export interface HeaderDesktopProps {}
+export interface HeaderDesktopProps {
+  signIn: any;
+  signOut: any;
+}
 
-export default function HeaderDesktop(props: HeaderDesktopProps) {
+export default function HeaderDesktop({ signIn, signOut }: HeaderDesktopProps) {
   const router = useRouter();
 
   return (
@@ -24,6 +27,29 @@ export default function HeaderDesktop(props: HeaderDesktopProps) {
               </MuiLink>
             </Link>
           ))}
+
+          <Link href="/api/auth/signin" passHref>
+            <MuiLink
+              sx={{ ml: 2, fontWeight: 'medium' }}
+              onClick={(e) => {
+                e.preventDefault();
+                signIn('github');
+              }}
+            >
+              Sign In
+            </MuiLink>
+          </Link>
+          <Link href="/api/auth/signout" passHref>
+            <MuiLink
+              sx={{ ml: 2, fontWeight: 'medium' }}
+              onClick={(e) => {
+                e.preventDefault();
+                signOut();
+              }}
+            >
+              Sign Out
+            </MuiLink>
+          </Link>
         </Stack>
       </Container>
     </Box>

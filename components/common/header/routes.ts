@@ -10,5 +10,9 @@ export const ROUTE_LIST = [
     {
         label: 'Work',
         path: '/work'
+    },
+    {
+        label: 'Dashboard',
+        path: '/dashboard'
     }
 ]
