@@ -1,4 +1,7 @@
+import { PostItem } from '@/components/blog';
+import { MainLayout } from '@/components/layout';
 import { getPostList } from '@/utils/post';
+import { Box, Container, Divider } from '@mui/material';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import Link from 'next/link';
 import * as React from 'react';
@@ -8,22 +11,32 @@ export interface BlogListPageProps {
 }
 
 export default function BlogListPage({ posts }: BlogListPageProps) {
-  return (
-    <div>
-      <h1>Posts page list</h1>
+  console.log('posts', posts);
 
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <Link href={`/posts/${post.id}`}>
-              <a>{post.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+  return (
+    <Box>
+      <Container>
+        <h1>Blog</h1>
+
+        <Box component="ul" sx={{ listStyleType: 'none', p: 0 }}>
+          {posts.map((post) => (
+            <li key={post.id}>
+              <Link href={`/blog/${post.slug}`}>
+                <a>
+                  <PostItem post={post} />
+                </a>
+              </Link>
+
+              <Divider sx={{ my: 3 }} />
+            </li>
+          ))}
+        </Box>
+      </Container>
+    </Box>
   );
 }
+
+BlogListPage.Layout = MainLayout;
 
 // Generics
 export const getStaticProps: GetStaticProps<BlogListPageProps> = async () => {
@@ -35,11 +48,11 @@ export const getStaticProps: GetStaticProps<BlogListPageProps> = async () => {
   // console.log(data);
 
   // Convert markdown file into javascrip object
-  const data = await getPostList();
+  const postList = await getPostList();
 
   return {
     props: {
-      posts: data.map((x: any) => ({ id: x.id, title: x.title })),
+      posts: postList,
     },
   };
 };
